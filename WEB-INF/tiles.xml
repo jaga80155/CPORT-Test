@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baselayoutTemplate" template="/WEB-INF/views/layouts/baseLayout.jsp">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="myHeader" value="/WEB-INF/views/layouts/header.jsp" />
+		<put-attribute name="myBody" value="/WEB-INF/views/layouts/body.jsp" />
+		<put-attribute name="myMenu" value="" />
+		<put-attribute name="myFooter" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>
+
+	<definition name="menulayoutTemplate" template="/WEB-INF/views/layouts/menuLayout.jsp">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myHeader" value="/WEB-INF/views/layouts/header.jsp" />
+		<put-attribute name="myBody" value="" />
+		<put-attribute name="myMenu" value="/WEB-INF/views/layouts/menu.jsp" />
+		<put-attribute name="myFooter" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>
+
+	<definition name="logoutbaselayoutTemplate" template="/WEB-INF/views/layouts/baseLayout.jsp">
+		<put-attribute name="title" value="Home Page" />
+		<put-attribute name="myHeader"
+			value="/WEB-INF/views/layouts/loginheader.jsp" />
+		<put-attribute name="myBody" value="/WEB-INF/views/layouts/body.jsp" />
+		<put-attribute name="myMenu" value="" />
+		<put-attribute name="myFooter" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>
+
+	<definition name="loginTile" extends="logoutbaselayoutTemplate">
+		<put-attribute name="title" value="Login Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/loginPage.jsp" />
+	</definition>
+
+	<definition name="menuTile" extends="baselayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/adminPage.jsp" />
+	</definition>
+
+	<definition name="registerUserTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/registerUser.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="deleteUserTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/deleteUser.jsp" />
+	</definition>
+
+	<definition name="updateUserTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/updateUser.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="addRoleTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/role/addRole.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+	
+	<definition name="updateRoleTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/role/updateRole.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="deleteRoleTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/role/deleteRole.jsp" />
+	</definition>
+
+	<definition name="changePasswordTile" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/changePassword.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="sessionOutTile" extends="logoutbaselayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/sessionOutPage.jsp" />
+	</definition>
+
+	<definition name="invalidformsubmission" extends="logoutbaselayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/invalidFormSubmission.jsp" />
+	</definition>
+
+	<definition name="menuTileEg" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/sessionOutPage.jsp" />
+	</definition>
+
+	<definition name="mapTile" extends="baselayoutTemplate">
+		<put-attribute name="title" value="Map Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/map/mapPage.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<!-- newly added -->
+	<definition name="invalidUser" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Authorization Failed" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/user/InvalidUser.jsp" />
+	</definition>
+
+	<definition name="appdetails" extends="baselayoutTemplate">
+		<put-attribute name="title" value="Plot Registration" />
+		<put-attribute name="myHeader"
+			value="/WEB-INF/views/layouts/printheader.jsp" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/utilities/failure.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="appdetailsprint" extends="baselayoutTemplate">
+		<put-attribute name="title" value="Plot Registration" />
+		<put-attribute name="myHeader"
+			value="/WEB-INF/views/layouts/printheader.jsp" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/plotapplication/PlotApplicationFreshPrint.jsp" />
+		<put-attribute name="myFooter" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>
+
+	<definition name="notifications" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Menu Page" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/utilities/addNotifications.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+
+	<definition name="reports" extends="baselayoutTemplate">
+		<put-attribute name="title" value="Reports Page" />
+		<put-attribute name="myBody" value="/WEB-INF/views/reports/reports.jsp" />
+	</definition>
+
+	<!-- <definition name="RenewalAppDetails" extends="baselayoutTemplate"> 
+		<put-attribute name="title" value="Renewal Plot Registration" /> <put-attribute 
+		name="myBody" value="/WEB-INF/views/plotapplication/renewalapplicationdetails.jsp" 
+		/> <put-attribute name="myFooter" value="/WEB-INF/views/layouts/dynamicfooter.jsp" 
+		/> </definition> -->
+
+	<definition name="dataManagement" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Data Management" />
+		<put-attribute name="myBody"
+			value="/WEB-INF/views/utilities/publishLayer.jsp" />
+		<put-attribute name="myFooter"
+			value="/WEB-INF/views/layouts/dynamicfooter.jsp" />
+	</definition>
+	
+	<definition name="resetPassword" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Reset Password " />
+		<put-attribute name="myMenu" value="" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/resetPassword.jsp" />
+		<put-attribute name="myHeader" value="" />
+		<put-attribute name="myFooter" value="" />
+	</definition>
+	
+	<definition name="resetPassword2" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Reset Password " />
+		<put-attribute name="myMenu" value="" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/reset.jsp" />
+		<put-attribute name="myHeader" value="" />
+		<put-attribute name="myFooter" value="" />
+	</definition>
+
+<definition name="resetPasswordFromEmail" extends="menulayoutTemplate">
+		<put-attribute name="title" value="Reset Password " />
+		<put-attribute name="myMenu" value="" />
+		<put-attribute name="myBody" value="/WEB-INF/views/user/resetfromemail.jsp" />
+		<put-attribute name="myHeader" value="" />
+		<put-attribute name="myFooter" value="" />
+	</definition>
+
+
+</tiles-definitions>

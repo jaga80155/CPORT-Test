@@ -1,0 +1,314 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+
+
+.accordion h2{
+  margin-bottom: 25px;
+}
+
+
+
+.accordion-inner img{
+  border-radius: 4px;
+}
+
+.accordion-inner h4{
+  margin-top: 0;
+}
+
+
+
+a.accordion-toggle  i{
+  width: 45px;
+  line-height: 44px;
+  font-size: 20px;
+  margin-top: -10px;
+  text-align: center;
+  margin-right: -15px;
+  background: #c9c9c9;
+}
+
+
+
+
+.pr0{
+		padding-right:0px !important;
+	}
+	.pl0{
+		padding-left:0px !important;
+	}
+	.brd{
+		border:1px solid #999;
+	}
+	
+.iwai{
+		margin-left:500px;
+	}
+	
+.navbar-brand.iwai > h2 {
+    color: #05527e;
+    font-size: 30px;
+}
+.shipping {
+    color: #05527e;
+    font-size: 15px;
+    margin-left: 109px;
+}
+.roles{
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+    margin-left: 14px;
+    width:240px;
+}
+.inland{
+	color:#05527e;
+	font-size:28px;
+}
+.ministry{
+	color:#05527e;
+	font-size:14px;
+}
+.btn.btn-primary.custom{
+	width:178px;
+}
+.import-label{
+	margin-top:3px;
+}
+.account-label{
+	margin-top:7px;
+}
+.col-sm-offset-4.col-sm-10.update > input{
+	background-color:#d9534f;
+	border-color:#d43f3a;
+	color:#fff;
+	display:inline-block;
+	padding:6px 12px;
+	margin-bottom:0;
+	font-size:14px;
+	font-weight:normal;
+	line-height:1.428571429;
+	text-align:center;
+	white-space:nowrap;
+	vertical-align:middle;
+	cursor:pointer;
+	background-image:none;
+	border:1px solid transparent;
+	border-radius:4px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none
+}
+.col-sm-6.button > input{
+	background-color:#d9534f;
+	border-color:#d43f3a;
+	color:#fff;
+	display:inline-block;
+	padding:2px 6px;
+	margin-bottom:0;
+	font-size:14px;
+	font-weight:normal;
+	line-height:1.428571429;
+	text-align:center;
+	white-space:nowrap;
+	vertical-align:middle;
+	cursor:pointer;
+	background-image:none;
+	border:1px solid transparent;
+	border-radius:4px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+	position:absolute;
+}
+.col-sm-5.delete{
+	margin-top:6px;
+}
+.img-responsive.import{
+	margin-top:80px;
+}
+.import-data{
+	width:86px;
+}
+.month-select > select{
+	width:86px;
+}
+.administrator-screen{
+	margin-top:105px;
+}
+.reg-img{
+	margin-top:105px;
+}
+.update-img{
+	margin-top:85px;
+}
+.changepassword-img{
+	margin-top:0px;
+}
+.login-img{
+	margin-top:8px;
+}
+.admin-center{
+	text-align:center;
+}
+.role-buttons{
+	margin-left:76px;
+}
+.india-map{
+	border:2px solid #05527e;
+	
+}
+.text-box-size{
+	width:150px;
+	height:22px;
+}
+.iic-logo{
+	margin-top:10px;
+}
+.line-chart{
+	margin-left:150px;
+}
+.delete-user{
+	margin-top:6px;
+}
+.error-message{
+	color:red;
+	float:right;
+	margin-right:38%;
+}
+
+.change-password{
+	color:red;
+	float:left;
+	margin-left:44%;
+}
+.select-user{
+	color:red;
+	float:left;
+	margin-left:38%;
+}
+.register-error{
+	color:red;
+	float:left;
+	margin-left:38%;
+}
+.populate-error{
+	color:red;
+	float:left;
+	margin-left:3%;
+}
+.import-error-message{
+	color:red;
+	float:left;
+	margin-left:38%;
+}
+.import-error-file{
+	float:right;
+	margin-right:38%;
+}
+.col-sm-4.control-label.file-top{
+	margin-top:8px;
+	font-size: 13px;
+}
+.main-background{
+	background:#99bbe8;
+	background-image:url("../../images/hdc_whitetopbottom.gif");
+}
+.longitude-style{
+	margin-left:20px;
+	position:relative;
+	top:-4px;
+	-webkit-transform: translateZ(0);
+}
+.latitude-style{
+	position:relative;
+	top:-4px;
+	-webkit-transform: translateZ(0);
+}
+.white > a {
+    color: #ffffff;
+}
+.register-width{
+	width:205px;
+}
+.update-width{
+	width:205px;
+}
+.deleterole-width{
+	width:205px;
+}
+.changepassword-width{
+	width:205px;
+}
+.jqx-widget-content.jqx-expander-content.jqx-expander-content-bottom span {
+  color: #05527e;
+  font-size: 11px;
+}
+.labelSpan.olButton {
+  font-size: 11px;
+  font-weight: bold;
+}
+.empty{
+	background:#05527e;
+	background-image:url("../../images/hdc_whitetopbottom.gif");
+	height:100%;
+}
+.haldia{
+	margin-top:18px;
+}
+
+label.col-sm-5.control-label.normal {
+  font-weight: normal;
+}
+
+color: #05527e;
+font-size: 11px;
+@media screen and (max-width: 480px)  { 
+	.register-error{
+	color:red;
+	float:left;
+	margin-left:5%;
+	}
+}
+@media screen and (max-width: 480px)  { 
+	.error-message{
+	color:red;
+	float:right;
+	margin-right:53%;
+	}
+}
+@media screen and (max-width: 480px)  { 
+	.import-error-message{
+	color:red;
+	float:left;
+	margin-left:5%;
+	}
+}
+@media screen and (max-width: 480px)  { 
+	.import-error-file{
+	color:red;
+	float:right;
+	margin-right:54%;
+	}
+}
+@media screen and (max-width: 480px)  { 
+	.select-user{
+	color:red;
+	float:left;
+	margin-left:5%;
+	}
+}
+@media screen and (max-width: 480px)  { 
+	.change-password{
+	color:red;
+	float:left;
+	margin-left:5%;
+	}
+}
+.go-to-button{
+	float:right;
+	margin-right:203px;
+	margin-top:-8px;
+}

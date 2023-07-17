@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.mapper.action.prefix.enabled" value="true" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.multipart.maxSize" value="600000000" />
+	<package name="default" extends="json-default,struts-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<!-- Login Interceptor for session time out -->
+		<interceptors>
+			<interceptor class="chennaiport.action.usermanagement.LoginInterceptor"
+				name="loginInterceptor"></interceptor>
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<action name="homePage" method="homeLink"
+			class="chennaiport.action.usermanagement.Login">
+			<result name="success" type="tiles">loginTile</result>
+		</action>
+
+		<action name="homeMap" method="homeLink"
+			class="chennaiport.action.usermanagement.Login">
+			<!-- <result name="success" type="tiles">frontmapTile</result> -->
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<action name="LoginPage" method="homeLink"
+			class="chennaiport.action.usermanagement.Login">
+			<result name="success" type="tiles">loginTile</result>
+			<result name="input" type="tiles">loginTile</result>
+		</action>
+
+		<!-- Login -->
+		<action name="MenuPage" class="chennaiport.action.usermanagement.Login"
+			method="validateUser">
+			<result name="input" type="tiles">loginTile</result>
+			<result name="inactive" type="tiles">loginTile</result>
+			<result name="locked" type="tiles">loginTile</result>
+			<result name="invalid" type="tiles">loginTile</result>
+			<result name="failure" type="tiles">loginTile</result>
+			<result name="success" type="tiles">menuTile</result>
+		</action>
+
+		<action name="homePageLink" class="chennaiport.action.usermanagement.Login"
+			method="home">
+			<result name="success" type="tiles">menuTile</result>
+			<result name="input" type="tiles">loginTile</result>
+		</action>
+
+		<action name="logout" class="chennaiport.action.usermanagement.Login"
+			method="logout">
+
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<!-- User Management -->
+		<action name="displayRegisterUserPage" class="chennaiport.action.usermanagement.RegisterUser"
+			method="registerUserPage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">registerUserTile</result>
+			<result name="input" type="tiles">registerUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="regsiterUser" class="chennaiport.action.usermanagement.RegisterUser"
+			method="registerUser">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">registerUserTile</result>
+			<result name="input" type="tiles">registerUserTile</result>
+			<result name="failure" type="tiles">registerUserTile</result>
+			<result name="exists" type="tiles">registerUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalidUser" type="tiles">invalidUser</result>
+			<result name="invalidinput" type="tiles">register-error</result>
+			 <result name="invalid.token" type="tiles">invalidformsubmission</result>
+		</action>
+
+		<action name="displayUpdateUserPage" class="chennaiport.action.usermanagement.UpdateUser"
+			method="updateUserPage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">updateUserTile</result>
+			<result name="input" type="tiles">updateUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="updateUser" class="chennaiport.action.usermanagement.UpdateUser"
+			method="updateUser">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">updateUserTile</result>
+			<result name="input" type="tiles">updateUserTile</result>
+			<result name="failure" type="tiles">updateUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission</result>
+		</action>
+
+		<action name="displayDeleteUserPage" class="chennaiport.action.usermanagement.DeleteUser"
+			method="deleteUserPage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">deleteUserTile</result>
+			<result name="input" type="tiles">deleteUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="deleteUser" class="chennaiport.action.usermanagement.DeleteUser"
+			method="deleteUser">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">deleteUserTile</result>
+			<result name="input" type="tiles">deleteUserTile</result>
+			<result name="failure" type="tiles">deleteUserTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+				<result name="invalid.token" type="tiles">invalidformsubmission</result>
+		</action>
+
+		<action name="getJsonUpdateUser" method="updateUserPage"
+			class="chennaiport.action.usermanagement.UpdateUserGetData">
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+			</result>
+		</action>
+
+		<!-- Role management -->
+		<action name="displayAddRolePage" class="chennaiport.action.usermanagement.AddRole"
+			method="addRolePage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">addRoleTile</result>
+			<result name="input" type="tiles">addRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="displayUpdateRolePage" class="chennaiport.action.usermanagement.UpdateRole"
+			method="updateRolePage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">updateRoleTile</result>
+			<result name="input" type="tiles">updateRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="getlayersbasedonrole" class="chennaiport.action.usermanagement.UpdateRole"
+			method="getLayersBasedOnRoleAjax">
+			<result type="json">/WEB-INF/views/role/updateRole.jsp
+			</result>
+		</action>
+
+
+		<action name="resetAddRolePage" class="chennaiport.action.usermanagement.AddRole"
+			method="reset">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">addRoleTile</result>
+			<result name="input" type="tiles">addRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="resetUpdateRolePage" class="chennaiport.action.usermanagement.UpdateRole"
+			method="reset">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">updateRoleTile</result>
+			<result name="input" type="tiles">updateRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="addRole" class="chennaiport.action.usermanagement.AddRole"
+			method="addRole">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">addRoleTile</result>
+			<result name="input" type="tiles">addRoleTile</result>
+			<result name="failure" type="tiles">addRoleTile</result>
+			<result name="exists" type="tiles">addRoleTile</result>
+			<result name="duplicate" type="tiles">addRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="updateRole" class="chennaiport.action.usermanagement.UpdateRole"
+			method="updateRole">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">updateRoleTile</result>
+			<result name="input" type="tiles">updateRoleTile</result>
+			<result name="failure" type="tiles">updateRoleTile</result>
+			<result name="exists" type="tiles">updateRoleTile</result>
+			<result name="duplicate" type="tiles">updateRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="displayDeleteRolePage" class="chennaiport.action.usermanagement.DeleteRole">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">deleteRoleTile</result>
+			<result name="input" type="tiles">deleteRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="deleteRole" class="chennaiport.action.usermanagement.DeleteRole"
+			method="deleteRole">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">deleteRoleTile</result>
+			<result name="input" type="tiles">deleteRoleTile</result>
+			<result name="failure" type="tiles">deleteRoleTile</result>
+			<result name="validrole" type="tiles">deleteRoleTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<!-- Change Password -->
+		<action name="displayChangePwdPage" class="chennaiport.action.usermanagement.ChangePassword"
+			method="changePasswordPage">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">changePasswordTile</result>
+			<result name="input" type="tiles">changePasswordTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="changePassword" class="chennaiport.action.usermanagement.ChangePassword"
+			method="changePassword">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="input" type="tiles">changePasswordTile</result>
+			<result name="failure" type="tiles">changePasswordTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="success" type="tiles">loginTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="resetChangePassword" class="chennaiport.action.usermanagement.ChangePassword"
+			method="reset">
+			<interceptor-ref name="loginStack" />
+			<result name="input" type="tiles">changePasswordTile</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="success" type="tiles">changePasswordTile</result>
+		</action>
+
+		<!-- Map Page Action -->
+		<action name="mapAction" class="chennaiport.action.map.MapAction">
+			<interceptor-ref name="loginStack" />
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="success">/WEB-INF/views/map/innermap.jsp</result>
+		</action>
+
+		<!-- plot registration for innermap -->
+		<action name="plotregistrationfresh" method="freshPlotRegistration"
+			class="chennaiport.action.plotapplication.FreshPlotApplication">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+			<result name="success" type="tiles">appdetailsprint</result>
+			<result name="input" type="tiles">appdetails</result>
+			<result name="failure" type="tiles">appdetails</result>
+			<result name="mailingerror" type="tiles">appdetailsprint</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="frontmapplotregistrationfresh3"
+			class="chennaiport.action.plotapplication.FreshPlotApplication">
+			<result name="success" type="tiles">appdetailsprint</result>
+		</action>
+
+
+		<action name="frontmapplotregistrationfresh2" method="freshPlotRegistration"
+			class="chennaiport.action.plotapplication.FreshPlotApplication">
+			
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				
+			</result>
+		</action>
+
+		<action name="exisfrontmapplotregistrationfresh2" method="existingPlotRegistration"
+			class="chennaiport.action.plotapplication.FreshPlotApplication">
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+			</result>
+		</action>
+
+		<!-- plot registration for front map -->
+		<action name="frontmapplotregistrationfresh" method="freshPlotRegistration"
+			class="chennaiport.action.plotapplication.FreshPlotApplication">
+
+			<result name="logout" type="tiles">logout</result>
+			<result name="success" type="tiles">appdetailsprint</result>
+			<result name="input" type="tiles">appdetails</result>
+			<result name="failure" type="tiles">appdetails</result>
+			<result name="mailingerror" type="tiles">appdetailsprint</result>
+			<result name="duplicate" type="tiles">appdetails</result>
+
+		</action>
+
+		<action name="notifications" method="notificationPage"
+			class="chennaiport.util.AddNotification">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+			<result name="success" type="tiles">notifications</result>
+			<result name="input" type="tiles">notifications</result>
+			<result name="invalidUser" type="tiles">invalidUser</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="addNotification" method="addNotification"
+			class="chennaiport.util.AddNotification">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+			<result name="input" type="tiles">notifications</result>
+			<result name="success" type="tiles">notifications</result>
+			<result name="failure" type="tiles">notifications</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="resetAddNotificationPage" method="reset"
+			class="chennaiport.util.AddNotification">
+			<interceptor-ref name="loginStack" />
+			<result name="input" type="tiles">notifications</result>
+			<result name="success" type="tiles">notifications</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<action name="getreports" method="home" class="chennaiport.util.Welcome">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+			<result name="input" type="tiles">reports</result>
+			<result name="success" type="tiles">reports</result>
+			<result name="failure" type="tiles">reports</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+		</action>
+
+		<!-- Plot Allocation Report -->
+		<action name="plotallocationjasperreport" method="plotAllocationReport"
+			class="chennaiport.action.map.PlotAllocationReport">
+			<result name="success"></result>
+		</action>
+
+
+		<action name="dataManagementPage" class="chennaiport.util.PublishShapeFile"
+			method="home">
+			<result name="success" type="tiles">dataManagement</result>
+		</action>
+
+		<action name="publishLayer" method="publish"
+			class="chennaiport.util.PublishShapeFile">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+			<result name="input" type="tiles">dataManagement</result>
+			<result name="success" type="tiles">dataManagement</result>
+			<result name="failure" type="tiles">dataManagement</result>
+			<result name="availableLayer" type="tiles">dataManagement</result>
+			<result name="sessionout" type="tiles">sessionOutTile</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="getLayers" method="home"
+			class="chennaiport.util.PublishShapeFile">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">layerPreview</result>
+		</action>
+
+		<action name="resetRegisterPage" method="reset"
+			class="chennaiport.action.usermanagement.RegisterUser">
+			<interceptor-ref name="loginStack" />
+			<result name="success" type="tiles">registerUserTile</result>
+		</action>
+
+		<action name="ajaxAction" class="chennaiport.util.GetFeaturesBasedonWorkSpace">
+			<result type="json">/WEB-INF/views/utilities/publishLayer.jsp
+			</result>
+		</action>
+
+		<!-- Upload Images -->
+
+		<action name="uploadplotimg" class="chennaiport.action.map.UploadWFSImages"
+			method="uploadPlotsImage">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+
+			<interceptor-ref name="params" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions"> .jpg, .png
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<action name="uploadbuildingimg" class="chennaiport.action.map.UploadWFSImages"
+			method="uploadBuildingsImage">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+
+			<interceptor-ref name="params" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions"> .jpg, .png
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<!-- Upload Documents -->
+
+		<action name="uploadplotdoc" class="chennaiport.action.map.UploadWFSImages"
+			method="uploadPlotsDocument">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+
+			<interceptor-ref name="params" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions"> .txt, .doc, .pdf, .xls
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<action name="uploadbuildingdoc" class="chennaiport.action.map.UploadWFSImages"
+			method="uploadBuildingsDocument">
+			<interceptor-ref name="loginStack" />
+			<result name="logout" type="tiles">logout</result>
+
+			<interceptor-ref name="params" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedExtensions"> .txt, .doc, .pdf, .xls
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/views/map/index.jsp</result>
+		</action>
+
+		<action name="resetPasswordPage" class="chennaiport.util.ResetPasswordNew">
+			<result name="success">/WEB-INF/views/user/resetPassword.jsp</result>
+		</action>
+
+		<action name="resetPassword" class="chennaiport.util.ResetPasswordNew"
+			method="displayVerificationDetails">
+			<result name="input" type="tiles">resetPassword</result>
+			<result name="success" type="tiles">resetPassword2</result>
+			<result name="failure" type="tiles">resetPassword</result>
+		</action>
+
+		<action name="verifyEmailId" class="chennaiport.util.ValidationForReset"
+			method="verifingEmailMobile">
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+
+			<result name="input" type="tiles">resetPassword2</result>
+			<result name="success" type="tiles">resetPassword2</result>
+			<result name="failure" type="tiles">resetPassword2</result>
+			<result name="invalid.token" type="tiles">invalidformsubmission
+			</result>
+		</action>
+
+		<action name="resetThroughEmail" class="chennaiport.util.ResetPasswordNew">
+			<result name="input" type="tiles">resetPasswordFromEmail</result>
+			<result name="success" type="tiles">resetPasswordFromEmail</result>
+			<result name="failure" type="tiles">resetPasswordFromEmail</result>
+		</action>
+
+		<action name="resetPasswordFromEmail" class="chennaiport.util.ResetPassword"
+			method="resetPassword">
+			<result name="input" type="tiles">resetPasswordFromEmail</result>
+			<result name="success" type="tiles">loginTile</result>
+			<result name="failure" type="tiles">resetPasswordFromEmail</result>
+
+		</action>
+
+	</package>
+</struts>    

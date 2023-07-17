@@ -1,0 +1,113 @@
+.layer-switcher.shown.ol-control {
+    background-color: transparent;
+}
+
+.layer-switcher.shown.ol-control:hover {
+    background-color: transparent;
+}
+
+.layer-switcher {
+    position: absolute;
+    top: 50px;
+    right: 0.5em;
+    text-align: left;
+    
+}
+
+.basemap-switcher {
+    position: absolute;
+    top: 74px;
+    right: 1.8em;
+    text-align: left;
+    
+}
+
+.layer-switcher.shown {
+    bottom: 3em;
+}
+
+.layer-switcher .panel {
+    padding: 0 6px 0 0;
+    margin: 0;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 2px;
+    display: none;
+    color: #F0C92F;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.layer-switcher.shown .panel {
+	height: 350px;
+	z-index: 3;
+    display: block;
+}
+
+.layer-switcher button {
+    float: right;
+    width: 42px;
+    height: 42px;
+    background-image:url("../../images/map/white_layer.png");
+    background-repeat: no-repeat;
+    background-position: 2px;
+    background-color:transparent;
+    background-size: 36px 36px;
+    border: none;
+}
+
+.layer-switcher.shown button {
+    display: none;
+}
+
+.layer-switcher button:focus, .layer-switcher button:hover {
+    background-color: white;
+}
+
+.layer-switcher ul {
+    padding-left: 5px;
+    list-style: none;
+}
+
+.layer-switcher li.group {
+    padding-top: 5px;
+}
+
+.layer-switcher li.group > label {
+    font-weight: bold;
+   	letter-spacing: 1px;
+}
+
+.layer-switcher li.layer {
+    display: table;
+}
+
+.layer-switcher li.layer label, .layer-switcher li.layer input {
+    display: table-cell;
+    vertical-align: sub;
+    padding-left: 2px;
+    padding-top: 1px;
+    font-weight: normal;
+    font-size: 10px !important;
+    font-family:verdana !important;
+}
+
+.layer-switcher input {
+    margin: 4px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
+}

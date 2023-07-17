@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+
+	<geoserver>
+		<!-- <url>http://111.93.3.53:9080/geoserver/</url> -->
+		<url>http://192.168.10.4:8080/geoserver/</url>
+		<workspace>chennai_port2</workspace>
+		<!-- <wfsplotslayername>PLOTSLAYER</wfsplotslayername> -->
+		<wfsplotslayername>plots_layer</wfsplotslayername>
+		<wfsbuildingslayername>BUILDINGSLAYER</wfsbuildingslayername>
+		<!-- <wfsplotsgridlayername>Plots</wfsplotsgridlayername> -->
+		<webserviceurl>http://192.168.10.4:8080/ChennaiPortDBSVC/REST/dbservice/</webserviceurl>
+	</geoserver>
+
+	<map>
+		<maxresolution>0.05</maxresolution>
+		<projection>EPSG:32644</projection>
+		<basemapprojection>EPSG:4326</basemapprojection>
+		<units>degrees</units>
+		<lat>80.292</lat>
+		<lon>13.0805</lon>
+		<zoomto>17.6</zoomto>
+		<maxzoomlevel>19</maxzoomlevel>
+		<zoomresolution>4.777314267823516</zoomresolution>
+
+	</map>
+
+	<frontmap>
+		<maxresolution>0.05</maxresolution>
+		<projection>EPSG:32644</projection>
+		<basemapprojection>EPSG:4326</basemapprojection>
+		<units>degrees</units>
+		<lat>80.292</lat>
+		<lon>13.081</lon>
+		<zoomto>18</zoomto>
+		<maxzoomlevel>19</maxzoomlevel>
+		<zoomresolution>4.777314267823516</zoomresolution>
+	</frontmap>
+
+</map>

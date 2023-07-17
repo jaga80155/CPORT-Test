@@ -1,0 +1,85 @@
+
+/* a{
+font-size: large;
+font-family: verdana;
+font-weight: :normal;
+} */
+body {
+
+	text-align: justify;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 10px;
+}
+.bgs_1 {/*background:url(../images/bg.jpg) no-repeat; -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  background:#373636;}
+p {
+	font-size: 16px;
+	font-family: arial;
+	color: #fff;
+	
+}
+
+/* img {
+	border-radius: 8px;
+} */
+.img {border:1px solid #c19878;} */
+h4 {
+	color:#D7AF8C;
+	font-family: 'primeregular';
+	font-size: 28px;
+}
+
+   @font-face {
+    font-family: 'primeregular';
+    src: url('../fonts//prime_regular-webfont.eot');
+    src: url('../fonts/prime_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/prime_regular-webfont.woff2') format('woff2'),
+         url('../fonts/prime_regular-webfont.woff') format('woff'),
+         url('../fonts/prime_regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+    
+ @font-face {
+    font-family: 'typo_round_thin_demoregular';
+    src: url('../fonts/typo_round_thin_demo-webfont.eot');
+    src: url('../fonts/typo_round_thin_demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/typo_round_thin_demo-webfont.woff2') format('woff2'),
+         url('../fonts/typo_round_thin_demo-webfont.woff') format('woff'),
+         url('../fonts/typo_round_thin_demo-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}   
+ 
+@font-face {
+    font-family: 'nexa_lightregular';
+    src: url('../fonts/nexa_light-webfont.eot');
+    src: url('../fonts/nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nexa_light-webfont.woff2') format('woff2'),
+         url('../fonts/nexa_light-webfont.woff') format('woff'),
+         url('../fonts/nexa_light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+.heading {font-family: 'primeregular'; font-size:35px; text-align:center; color:#fff;}
+.sm_head {font-family: 'primeregular'; font-size:17px; color:#C15D3B;} 
+.runs_txt {font-family:verdana; font-size:12px; color:#fff; letter-spacing:1px;}   
+.vand {font-size: 18pt; font-family: 'primeregular'; color: #fff;}
+/*.link{font-size: 10t;font-family: primeregular;font-weight: :normal;color: #fff;}*/
+.mnu {display:block;}
+.mnu ul{list-style:none; padding:4px;}
+.mnu ul li { color:#C15D3B; margin-left: 2em; font-size:17px; text-decoration:none; font-family: primeregular;}
+.mnu ul li a { text-decoration:none; font-size:17px; color:#C15D3B; }
+.mnu ul li a:hover {color:yellow;}
+
+
+

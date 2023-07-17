@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-04-21T18:36:19 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Dock_Zone1" pageWidth="842" pageHeight="1190" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="6d629646-3036-4161-8e8e-49c64521dff8">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="leaseename" class="java.lang.String"/>
+	<parameter name="allotmentdate" class="java.lang.String"/>
+	<parameter name="chennaiportlogopath" class="java.lang.String"/>
+	<parameter name="iiclogopath" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from get_plotallocationdetails('uiujyyyyyyyyyyyyyyyyyyyyyyyyyytttttttfgtghjhgyghtytytytytytytygght','12-12-2014')]]>
+	</queryString>
+	<field name="sno" class="java.lang.Integer"/>
+	<field name="leasee_name" class="java.lang.String"/>
+	<field name="alloted_date" class="java.sql.Date"/>
+	<field name="plot_id" class="java.lang.String"/>
+	<field name="plot_area" class="java.math.BigDecimal"/>
+	<field name="lease_amount" class="java.math.BigDecimal"/>
+	<field name="rent_overdue" class="java.math.BigDecimal"/>
+	<field name="comments" class="java.lang.String"/>
+	<variable name="REPORT_COUNT2" class="java.lang.Integer" resetType="None" incrementType="Report" calculation="Count"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="7" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="223" splitType="Stretch">
+			<staticText>
+				<reportElement x="360" y="100" width="165" height="30" forecolor="#006699" uuid="de4191d2-43c8-4220-825e-2272895b8b15"/>
+				<box topPadding="5" leftPadding="5" rightPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allotee Name: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="270" y="180" width="291" height="30" forecolor="#006699" uuid="9f850124-ba4c-43fd-8519-f7627fa6016c"/>
+				<textElement>
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PLOT ALLOCATION REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="40" width="324" height="30" forecolor="#006699" uuid="69808107-80b2-4a1a-bb54-386631e22676"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISO 9001:2008 & ISPS Compliant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="321" height="40" forecolor="#006699" uuid="c5a3f7da-5a93-44eb-94f2-23b32a50938b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Port of Chennai]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="1" y="80" width="800" height="1" forecolor="#FF6600" backcolor="rgba(201, 212, 206, 0.02745098)" uuid="33c3c396-d48a-402f-ad8e-ce1cb207f56f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="" positionType="Float" stretchType="RelativeToTallestObject" x="524" y="100" width="149" height="30" uuid="9e4dea13-b00a-45af-b3e0-6901cd3f0211"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{leaseename}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="524" y="136" width="150" height="34" uuid="e1f1625a-03ac-4e70-afc0-de54c14f702d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{allotmentdate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="85" y="222" width="591" height="1" forecolor="#999999" uuid="1274e0d7-673c-4bd3-9785-d1ee84b9b5d5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="360" y="136" width="165" height="30" forecolor="#006699" uuid="61748d82-c220-4c30-9494-4b1aadea9cca"/>
+				<box topPadding="5" leftPadding="5" rightPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date of Allocation: ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="80" y="14" width="50" height="50" uuid="e77a3b08-ba58-4800-9777-75ca217a93b8"/>
+				<imageExpression><![CDATA[$P{chennaiportlogopath} + "logo.PNG"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="640" y="14" width="50" height="50" uuid="46ddec8c-1c85-4fd5-9287-c20d17dcc23b"/>
+				<imageExpression><![CDATA[$P{iiclogopath} + "iiclogo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="85" y="3" width="57" height="41" uuid="0173c3c4-4546-4cd2-a340-dea47bb129e1"/>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="3" width="79" height="42" uuid="7b5ebf94-5a1f-4039-b9e0-eca9f621ec08"/>
+				<box topPadding="6" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plot Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="3" width="79" height="42" uuid="255f4152-e277-46cc-a2be-b67078153d81"/>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plot Area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="3" width="100" height="42" uuid="be493045-7b11-4f4f-be4a-59f68a7669fd">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allocation date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="2" width="89" height="43" uuid="1201d048-58b8-4397-b0de-c0996a80efd7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Allotee Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="2" width="99" height="43" uuid="0d887f3c-2f24-4093-80cf-1c7c85003b92">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lease Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="590" y="2" width="84" height="42" uuid="daf592f6-bf98-42b7-83ed-46541f587d9f">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="5" leftPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rent Overdue]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement key="" positionType="Float" x="85" y="-46" width="1" height="46" forecolor="#999999" backcolor="#FFFFFF" uuid="eb469ea1-165f-4fe7-bd33-8174a3c0dee2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="676" y="-46" width="1" height="46" forecolor="#999999" uuid="7da2079a-bf69-432e-89a5-302c3c4a989a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="85" y="0" width="591" height="1" forecolor="#999999" uuid="d56ad9e9-7a79-43e5-afa4-0518dcc90cc8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="86" y="0" width="55" height="41" uuid="5da6bd67-dc63-4d19-8ca7-9a80850ff1d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="80" height="41" uuid="cdcc7f00-7428-4842-bf6a-f047d9e567a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{plot_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="79" height="40" uuid="d752552a-fe91-41bd-ba75-0767c07cb4cb">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{plot_area}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="99" height="41" uuid="67f0a204-ffe7-44b6-805d-cf0bdf5dff71">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alloted_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="90" height="41" uuid="03d77a85-d7d4-4b7c-b5be-de4886e95baf">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{leasee_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="0" width="100" height="41" uuid="83d048d5-07ab-4368-90aa-eb82b75c3ba1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lease_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="592" y="0" width="85" height="42" uuid="0542a19b-b140-49e3-9717-d78d21c5eda2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rent_overdue}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="86" y="41" width="591" height="1" forecolor="#999999" uuid="3ce45a5a-9ede-46fb-aa4a-00cd768f9cce">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="591" y="-46" width="1" height="46" forecolor="#999999" uuid="1b06a195-d8e9-484c-98dd-7f1061deb5c2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="491" y="-46" width="1" height="46" forecolor="#999999" uuid="b751450d-1ef0-4a87-95e4-8d1aaf44b709">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="401" y="-46" width="1" height="46" forecolor="#999999" uuid="376a2981-3047-4a1c-9b37-4d9656681596">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="301" y="-46" width="1" height="46" forecolor="#999999" uuid="599f1090-23e3-4252-96cc-b545a3f7917a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="221" y="-46" width="1" height="46" forecolor="#999999" uuid="fb458b86-80e5-4d1c-b2c7-aaddbe915b04">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="141" y="-46" width="1" height="46" forecolor="#999999" uuid="aeb71af4-0efe-495b-a5a8-3efb290b9e73">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="85" y="0" width="1" height="42" forecolor="#999999" uuid="df29c2ba-8020-4c65-92e6-4d739be34a3f">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="141" y="0" width="1" height="42" forecolor="#999999" uuid="cda7c3d8-d861-4362-852c-b405176c5cf9">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="221" y="0" width="1" height="42" forecolor="#999999" uuid="14ca0e14-f7d7-4947-8adb-e777f30bc1fd">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="301" y="0" width="1" height="42" forecolor="#999999" uuid="aa41f9d4-cb0c-4824-a916-8c28dec3a090">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="401" y="0" width="1" height="42" forecolor="#999999" uuid="66e9cffc-2700-4351-b26e-afcc728a1ee0">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="491" y="0" width="1" height="42" forecolor="#999999" uuid="139a2911-fb50-446a-8a76-bf1c1116a1c2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="591" y="0" width="1" height="42" forecolor="#999999" uuid="18c4cf72-1779-4dcd-bcbb-1c4f013b2d2a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="676" y="0" width="1" height="42" forecolor="#999999" uuid="8eba12a2-c131-43c6-93ed-4290427e81ac">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-1" y="-1" width="804" height="30" forecolor="#FFFFFF" backcolor="#006699" uuid="c6df8fa4-e900-49c7-ae82-19664bcc8ea4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Executed by RAIL TEL Enterprises Limited (powered by IIC Technologies Limited, Hyderabad) Copyright ©  	  Port of Chennai]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="627" y="-1" width="35" height="30" forecolor="#FFFFFF" uuid="28ed2106-41a0-41ac-bf55-99e3297aa10c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("yyyy")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
